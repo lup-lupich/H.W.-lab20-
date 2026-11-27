@@ -30,8 +30,19 @@
 
 ### Алгоритм
 1. **Начало**
-
-2. **Конец**
+2. Объявление указателей на файлы: FILE* `ptr_winter`, * `ptr_winter_numbering`
+3. Инициализация и объявление строк для имен файлов char `fname1[]` = "winter.txt", char `fname2[40]`
+4. Объявление строки для хранения одного слова из файла char `word[20]`
+5. Инициализация счетчика `count` = 0
+6. Вывод и ввод данных для `fname2`
+7. Открытия файлов `fname1` в режиме "rt" и `fname2` в режиме "wt" с проверкой открытия
+   - if ((ptr_winter = fopen(fname1, "rt")) == NULL) { printf("Ошибка открытия файла"); return -1; }
+   - if ((ptr_winter_numbering = fopen(fname2, "wt")) == NULL) { printf("Ошибка открытия файла"); return -1; }
+8. Цикл while с условием выхода (fscanf(ptr_winter, "%s", word) != EOF)
+   - count += 1 - увеличение счетчика
+   - fprintf(ptr_winter_numbering,"%d. %s\n", count, word) - запись в файл с нумерацией слов
+9. Закрытие файлов
+10. **Конец**
 
 ### Блок-схема
 ![Блок-схема алгоритма](Images/SCHEMA_lab20.png) 
